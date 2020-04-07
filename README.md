@@ -18,60 +18,67 @@ Here's the template:
 -------------------------------------------------------------------------------
 What organization or people are asking to have this signed:
 -------------------------------------------------------------------------------
-[your text here]
+UOS(https://chinauos.com)
 
 -------------------------------------------------------------------------------
 What product or service is this for:
 -------------------------------------------------------------------------------
-[your text here]
+UOS GNU/Linux
 
 -------------------------------------------------------------------------------
 What's the justification that this really does need to be signed for the whole world to be able to boot it:
 -------------------------------------------------------------------------------
-[your text here]
+UOS is a linux distribution based on Debian, which need running normally in secure-boot-enable status on any AMD64 device, 
+through which to avoid the hidden danger when customer disable secure boot.
 
 -------------------------------------------------------------------------------
 Who is the primary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community:
+- Name: ZhangShuang
+- Position: Sernior Director
+- Email address: zhuangshuang@uniontech.com
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community:
+- Name: ZhangYueQian
+- Position: Sernior Developer
+- Email address: zhangyueqian@uniontech.com
 
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
-[our url here]
+https://github.com/rhboot/shim/release/tag/15 
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-[your url here]
+https://github.com/rhboot/shim/release/tag/15
 
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-[your text here]
+* patches/gcc-9-fix.patch:
+  - Fix "address of packed member" compilation error with GGC 9 
+    from pull request https://github.com/rhboot/shim/pull/183
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
-[your text here]
+We recommend reproducing the binary by way of using the supplied Dockerfile:
+
+`docker build .`
+
+The binary is built on Debian unstable as of 2020-04-07.
+
+Versions used can be found in the build logs.
 
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-[your text here]
+shim-15.g51413d1-7_amd64.log
 
 -------------------------------------------------------------------------------
 Add any additional information you think we may need to validate this shim
 -------------------------------------------------------------------------------
-[your text here]
+N/A
